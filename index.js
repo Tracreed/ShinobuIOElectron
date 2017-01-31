@@ -4,11 +4,9 @@ const {app, BrowserWindow} = require('electron');
 let window;
 
 function createWindow() {
-    window = new BrowserWindow({ width: 400, height: 48, frame: true, resizable: true, maximizable: false, fullscreenable: false, title: "Shinobu.io" });
+    window = new BrowserWindow({ width: 480, height: 58, frame: false, resizable: true, maximizable: false, fullscreenable: false, title: "Shinobu.io" });
 
     window.loadURL(`file://${__dirname}/index.html`);
-
-    window.openDevTools();
 
     window.on('closed', () => {
         window = null;

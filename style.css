@@ -1,0 +1,124 @@
+@font-face {
+    font-family: 'Fira Code';
+}
+
+::selection {
+    color: inherit;
+    background-color: #01a2b7;
+}
+
+html {
+    font-family: 'Fira Code';
+    color: white;
+    font-size: 10px;
+    overflow: hidden;
+}
+
+body {
+    -webkit-app-region: drag;
+    width: 400px;
+    height: 48px;
+    background-color: #2C2E3B;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.btn-icon {
+    width: 16px;
+    height: 16px;
+    background-size: 16px 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#btn-pause-play-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 48px;
+    height: 100%;
+
+    background-color: #01a2b7;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+}
+
+#btn-pause-play {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+}
+
+.btn-pause {
+    background-image: url(pause.png);
+}
+
+.btn-play {
+    background-image: url(play.png);
+}
+
+h1 {
+    font-size: 11pt;
+    padding: 0;
+    margin: 0;
+    margin-top: 12px;
+    padding-top: 9px;
+    font-weight: lighter;
+}
+
+h2 {
+    font-size: 8pt;
+    padding: 0;
+    margin: 0;
+    margin-left: 50px;
+    font-weight: lighter;
+}
+
+#label-volume {
+    font-size: 8pt;
+    padding: 0;
+    margin: 0;
+}
+
+#label-title {
+    position: absolute;
+    left: 58px;
+    top: 6px;
+    -webkit-app-region: no-drag;
+}
+
+#label-artist {
+    position: absolute;
+    left: 58px;
+    bottom: 6px;
+    -webkit-app-region: no-drag;
+}
+
+#right-section {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+
+    -webkit-app-region: no-drag;
+    -webkit-user-select: none;
+    cursor: default;
+    border-left: 1px solid #1D1F2B;
+    background-color: #2C2E3B;
+}
+
+.btn-close {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    background-image: url(close.png);
+    cursor: pointer;
+}
+
+#label-volume-wrapper {
+    position: absolute;
+    right: 8px;
+    bottom: 4px;
+}
