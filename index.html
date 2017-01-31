@@ -1,0 +1,60 @@
+<html>
+    <head>
+
+    </head>
+    <title></title>
+    <script>
+    let socket;
+    let hbInterval;
+    let originLink = "wss://gateway.shinobu.io";
+    let currentSong;
+    let sendHB;
+
+    socket = new WebSocket(originLink);
+
+    socket.onmessage = (response) => {
+        // Parse the json Crawl returns
+        data = JSON.parse(response.data);
+        if (data["op"] === 0) {
+            currentSong = data
+        }
+        if (data["op"] === 3) {
+            // Set our heartbeat interval
+            hbInterval = data["d"]["heartbeatInterval"];
+            // Ghetto logging
+            console.log(`Heartbeat interval set to: ${hbInterval}`);
+            // Convert seconds to milliseconds
+            heartbeat(socket, hbInterval * 1000);
+        }
+        if (data["op"] === 4) {
+            return;
+        }
+
+        console.log(data);
+    }
+
+    socket.onclose = (msg) => {
+        console.log("Connection closed. Re-establishing connection.")
+        clearInterval(sendHB)
+    }
+
+    socket.onopen = () => {
+        console.log("Websocket connection established");
+        clearInterval(sendHB);
+    }
+
+    // Heartbeat for us ;)
+    function heartbeat() {
+        sendHB = setInterval(() => {
+            socket.send(JSON.stringify({ op: 1 }))
+        }, hbInterval * 1000);
+        // More ghetto logging
+        console.log("Heartbeat sent");
+    }
+    </script>
+    <body>
+        <audio id="audio-player" autoplay preload="auto">
+            <source src="https://kpop.shinobu.io/radio" type="audio/mp3" />
+        </audio>
+    </body>
+</html>
