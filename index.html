@@ -8,8 +8,13 @@
     <link href="./style.css" rel="stylesheet" type="text/css">
 
     <!-- Jquery and it's fucking undefined $ errors can shoo -->
-    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
-    <script>if (window.module) module = window.module;</script>
+    <script>
+        if (typeof module === 'object')
+            window.module = module; module = undefined;
+    </script>
+    <script>
+        if (window.module) module = window.module;
+    </script>
 
     <!-- I need a better way of DOM manipulaton -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" language="javascript" type="text/javascript"></script>
@@ -30,8 +35,8 @@
         data = JSON.parse(response.data);
         if (data["op"] === 0) {
             // Handle this once it's important
-            $('#label-title').html(data["d"]["title"]);
-            $('#label-artist-album').html(`Artist: ${data["d"]["artist"]} Album: ${data["d"]["album"]}`);
+            document.getElementById("label-title").innerHTML = data["d"]["title"]
+            document.getElementById("label-artist-album").innerHTML = `${data["d"]["artist"]} | (${data["d"]["album"]})`
         }
         if (data["op"] === 3) {
             // Set our heartbeat interval
@@ -45,7 +50,6 @@
             // OP code 4 is just heartbeat ack; we can disregard it
             return;
         }
-
         console.log(data);
     }
 
@@ -69,7 +73,7 @@
     }
 
     function mouseWheelHandler(e) {
-        let mediaPlayer = $("#audio-player")[0];
+        let mediaPlayer = document.getElementById("audio-player");
         let delta = (e.wheelDelta / 24) / 100;
         let amount = mediaPlayer.volume + delta;
         amount = Math.max(0, amount);

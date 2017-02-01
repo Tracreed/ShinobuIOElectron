@@ -4,7 +4,16 @@ const {app, BrowserWindow} = require('electron');
 let window;
 
 function createWindow() {
-    window = new BrowserWindow({ width: 480, height: 58, frame: false, resizable: true, maximizable: false, fullscreenable: false, title: "Shinobu.io" });
+    window = new BrowserWindow({
+        width: 480,
+        height: 60,
+        frame: false,
+        resizable: true,
+        maximizable: false,
+        fullscreenable: false,
+        title: "Shinobu.io",
+        icon: "icons/icon.png"
+    });
 
     window.loadURL(`file://${__dirname}/index.html`);
 

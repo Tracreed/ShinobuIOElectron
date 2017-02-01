@@ -1,5 +1,10 @@
+/*
+ * A font that took me way too long to pick
+ */
+
 @font-face {
-    font-family: 'Fira Code';
+    font-family: 'Source Sans Pro', sans-serif;
+    src: url('SourceSansPro-Regular.ttf');
 }
 
 ::selection {
@@ -8,7 +13,7 @@
 }
 
 html {
-    font-family: 'Fira Code';
+    font-family: 'Source Sans Pro', sans-serif;
     color: white;
     font-size: 10px;
     overflow: hidden;
@@ -27,8 +32,6 @@ body {
     width: 16px;
     height: 16px;
     background-size: 16px 16px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 #btn-pause-play-wrapper {
@@ -48,6 +51,7 @@ body {
     position: absolute;
     left: 16px;
     top: 16px;
+    margin-top: 6px;
 }
 
 .btn-pause {
@@ -58,41 +62,38 @@ body {
     background-image: url(play.png);
 }
 
-h1 {
-    font-size: 11pt;
-    padding: 0;
-    margin: 0;
-    margin-top: 12px;
-    padding-top: 9px;
-    font-weight: lighter;
-}
-
-h2 {
-    font-size: 8pt;
-    padding: 0;
-    margin: 0;
-    margin-left: 50px;
+h1, h2 {
     font-weight: lighter;
 }
 
 #label-volume {
-    font-size: 8pt;
+    font-size: 10pt;
     padding: 0;
     margin: 0;
 }
 
 #label-title {
+    font-size: 13pt;
     position: absolute;
-    left: 58px;
-    top: 6px;
+    left: 57px;
+    top: 8px;
+    padding: 0;
+    margin: 0;
     -webkit-app-region: no-drag;
 }
 
-#label-artist {
+#label-artist-album {
     position: absolute;
     left: 58px;
     bottom: 6px;
     -webkit-app-region: no-drag;
+
+    font-size: 10pt;
+    padding: 0;
+    margin: 0;
+    margin-top: 12px;
+    padding-top: 15px;
+    font-weight: lighter;
 }
 
 #right-section {
@@ -101,7 +102,6 @@ h2 {
     bottom: 0;
     right: 0;
     width: 40px;
-
     -webkit-app-region: no-drag;
     -webkit-user-select: none;
     cursor: default;
@@ -115,10 +115,12 @@ h2 {
     top: 6px;
     background-image: url(close.png);
     cursor: pointer;
+    margin-right: 6px;
+    margin-top: 8px;
 }
 
 #label-volume-wrapper {
     position: absolute;
-    right: 8px;
+    right: 3px;
     bottom: 4px;
 }
