@@ -21,8 +21,10 @@ html {
 
 body {
     -webkit-app-region: drag;
-    width: 400px;
-    height: 48px;
+    min-width: 400px;
+    min-height: 48px;
+    margin: 0px;
+    height: 100%;
     background-color: #2C2E3B;
     padding-bottom: 0;
     margin-bottom: 0;
@@ -35,23 +37,19 @@ body {
 }
 
 #btn-pause-play-wrapper {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
+    float: left;
+    margin: 0px;
     width: 48px;
     height: 100%;
-
     background-color: #01a2b7;
     cursor: pointer;
     -webkit-app-region: no-drag;
 }
 
 #btn-pause-play {
-    position: absolute;
-    left: 16px;
-    top: 16px;
-    margin-top: 6px;
+    vertical-align: middle;
+    margin: auto;
+    margin-top: 50%;
 }
 
 .btn-pause {
@@ -62,45 +60,45 @@ body {
     background-image: url(play.png);
 }
 
-h1, h2 {
+h1,
+h2 {
     font-weight: lighter;
 }
 
 #label-volume {
+    font-weight: lighter;
     font-size: 10pt;
     padding: 0;
-    margin: 0;
 }
 
 #label-title {
+    margin-left: 5px;
+    margin-top: 5px;
     font-size: 13pt;
-    position: absolute;
-    left: 57px;
-    top: 8px;
-    padding: 0;
-    margin: 0;
+    float: left;
+    display: inline-block;
     -webkit-app-region: no-drag;
 }
 
 #label-artist-album {
-    position: absolute;
-    left: 58px;
-    bottom: 6px;
+    font-weight: lighter;
+    margin: 0px;
+    float: left;
+    margin-top 10px: initial;
+    display: inline-block;
+    clear: left;
+    margin-left 5px: initial;
+    margin-left: 5px;
+    margin-top: 5px;
     -webkit-app-region: no-drag;
-
     font-size: 10pt;
     padding: 0;
-    margin: 0;
-    margin-top: 12px;
-    padding-top: 15px;
     font-weight: lighter;
 }
 
 #right-section {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
+    height: 100%;
+    float: right;
     width: 40px;
     -webkit-app-region: no-drag;
     -webkit-user-select: none;
@@ -110,17 +108,21 @@ h1, h2 {
 }
 
 .btn-close {
-    position: absolute;
-    right: 6px;
-    top: 6px;
+    float: right;
     background-image: url(close.png);
     cursor: pointer;
-    margin-right: 6px;
-    margin-top: 8px;
+    margin-right: 11px;
+    margin-top: 14px;
 }
 
 #label-volume-wrapper {
     position: absolute;
     right: 3px;
-    bottom: 4px;
+    bottom: -6px;
+}
+
+#info {
+    float: left;
+    width: auto;
+    height: auto;
 }
