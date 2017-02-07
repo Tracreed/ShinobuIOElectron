@@ -69,6 +69,8 @@ h2 {
     font-weight: lighter;
     font-size: 10pt;
     padding: 0;
+    margin: 0px;
+    margin-bottom: 13.333px;
 }
 
 #label-title {
